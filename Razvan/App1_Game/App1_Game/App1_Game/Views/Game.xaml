@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system ="clr-namespace:System;assembly=netstandard"
+             mc:Ignorable="d"
+             x:Class="App1_Game.Views.Game"
+             Padding="0">
+
+    <AbsoluteLayout>
+        <Image Source="background.png"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="1,1,1,1"
+               Aspect="Fill"/>
+
+        <Grid HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "205"/>
+                <ColumnDefinition Width= "205"/>
+            </Grid.ColumnDefinitions>
+
+            
+            <Image Source="score.png"
+                   Grid.Row="0" Grid.Column="0"
+                   HorizontalOptions="Center"/>
+            <Label Margin="15,20,0,0" Text="{Binding score}" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+            <Image Source="time.png"
+                   Grid.Row="0" Grid.Column="1"
+                   HorizontalOptions="Center"/>
+            <Label Margin="0,20,-400,0" Text="{Binding rez}" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+        </Grid>
+
+        <StackLayout VerticalOptions="Start"
+                     Margin="60,150,60,50"
+                     WidthRequest="300">
+            <Label Text="{Binding randomNumber}" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+            <Label Text= "{x:Static system:Environment.NewLine}"/>
+            <Entry Margin ="45,0,40,0" Text="{Binding Entry}"/>
+            <Button Text="Play" Clicked="Button_Clicked"/>
+        </StackLayout>
+
+        <StackLayout Margin="60,400,0,0">
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Add 1 to each of the digits of the number" FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text= "{x:Static system:Environment.NewLine}"/>
+                            <Span Text="For example: 3579 becomes 4680" FontAttributes="Bold" TextColor="Black"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </AbsoluteLayout>
+    
+</ContentPage>
