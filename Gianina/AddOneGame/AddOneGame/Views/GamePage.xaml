@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:AddOneGame.Views"
+             x:Class="AddOneGame.Views.GamePage"
+             Title="Add One Game">
+
+    
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem Text="Resign" Clicked="Back_To_Menu" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout  Spacing="20" Padding="15">
+
+            <Label Text="{Binding Score}" FontSize="Large" />
+
+            <Label Text="{Binding GameTimeLeft}" FontSize="Large" />
+            
+            <Label Text="{Binding GameNumber}" d:Text="GameNumber" FontSize="Medium"/>
+
+            <Entry Text="{Binding InputNumber}" FontSize="Medium"/>
+
+            <Button Text="CHECK"
+                HorizontalOptions="Center"
+                Clicked="Check_Number" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
